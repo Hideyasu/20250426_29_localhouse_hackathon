@@ -1,8 +1,8 @@
 <script lang="ts">
   import Map from "../components/map.svelte";
   import Reform from "../components/reform.svelte";
-  import Graph from '../components/graph.svelte';
-  import Dashboard from '../components/dashboard.svelte';
+  //import Graph from "../components/graph.svelte";
+  //import Dashboard from "../components/dashboard.svelte";
   import Search from "$lib/components/search.svelte";
   import type { House } from "$lib/api/houses";
 
@@ -46,7 +46,7 @@
 <!-- 4セクションレイアウト -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 pb-10">
   <!-- Search -->
-  <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
+  <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Search</div>
     <Search bind:filteredHouses />
   </div>
@@ -70,19 +70,12 @@
     <div class="aspect-square rounded-lg overflow-hidden">
       <Map />
     </div>
-    
   </div>
 
   <!-- Dashboard -->
   <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Dashboard</div>
-    <Graph />
-    <Dashboard />
+    <!--<Graph />-->
+    <!--<Dashboard />-->
   </div>
 </div>
-
-<style>
-  .text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  }
-</style>
