@@ -31,6 +31,8 @@
 		"date-fns": "^4.1.0"
 	},
 	"overrides": {
-		"rollup": "npm:@rollup/wasm-node"
+		"vite": {
+			"rollup": "npm:@rollup/wasm-node"
+		}
 	}
 }
