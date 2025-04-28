@@ -1,6 +1,8 @@
 <script lang="ts">
   import Map from "../components/map.svelte";
   import Reform from "../components/reform.svelte";
+  import Graph from '../components/graph.svelte';
+  import Dashboard from '../components/dashboard.svelte';
   import Search from "$lib/components/search.svelte";
   import type { House } from "$lib/api/houses";
 
@@ -65,15 +67,17 @@
   <!-- Map -->
   <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Map</div>
-    <div class="h-[400px] rounded-lg overflow-hidden">
+    <div class="aspect-square rounded-lg overflow-hidden">
       <Map />
     </div>
+    
   </div>
 
   <!-- Dashboard -->
   <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Dashboard</div>
-    <div class="text-gray-600">※ ダッシュボード機能はこれから実装</div>
+    <Graph />
+    <Dashboard />
   </div>
 </div>
 
