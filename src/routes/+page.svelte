@@ -68,7 +68,7 @@
   <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Map</div>
     <div class="aspect-square rounded-lg overflow-hidden">
-      <Map />
+      <Map houses={filteredHouses} />
     </div>
   </div>
 
