@@ -1,20 +1,20 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
+  import { goto } from "$app/navigation";
 
-  const beforeImage = '/before-placeholder.png';
-  const afterImage = '/after-placeholder.png';
+  const beforeImage = "";
+  const afterImage = "";
 
   const reformCosts = [
-    { item: 'キッチン', cost: 500000 },
-    { item: '風呂・浴槽', cost: 800000 },
-    { item: '外壁塗装・外壁', cost: 1200000 },
-    { item: 'リビング', cost: 700000 }
+    { item: "キッチン", cost: 500000 },
+    { item: "風呂・浴槽", cost: 800000 },
+    { item: "外壁塗装・外壁", cost: 1200000 },
+    { item: "リビング", cost: 700000 },
   ];
 
   const totalCost = reformCosts.reduce((sum, reform) => sum + reform.cost, 0);
 
   const calculateInvestment = () => {
-    goto('/Dashboard');
+    goto("/Dashboard");
   };
 </script>
 
@@ -43,7 +43,9 @@
     年収:
     <input type="number" placeholder="例: 5000000" />
   </label>
-  <button type="submit">空き家購入の有無による20年後の出資額の違いを調べる</button>
+  <button type="submit"
+    >空き家購入の有無による20年後の出資額の違いを調べる</button
+  >
 </form>
 
 <style>

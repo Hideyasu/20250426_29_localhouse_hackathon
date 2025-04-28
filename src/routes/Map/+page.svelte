@@ -1,32 +1,36 @@
 <script lang="ts">
-  import { goto } from '$app/navigation';
+  import { goto } from "$app/navigation";
 
   const properties = [
     {
       id: 1,
       lat: 34.6937,
       lng: 135.5023,
-      image: '/placeholder.png',
-      price: '¥20,000,000',
-      address: '大阪市中央区',
+      image: "",
+      price: "¥20,000,000",
+      address: "大阪市中央区",
       details: {
-        year: '築10年',
-        layout: '3LDK',
-        size: '80㎡',
-        station: '駅から徒歩10分'
-      }
-    }
+        year: "築10年",
+        layout: "3LDK",
+        size: "80㎡",
+        station: "駅から徒歩10分",
+      },
+    },
   ];
 
   const selectProperty = (id: number) => {
-    goto('/Reform');
+    goto("/Reform");
   };
 </script>
 
 <h1>Map</h1>
 <div id="map">
   {#each properties as property}
-    <div class="pin" style="top: {property.lat}px; left: {property.lng}px;" on:click={() => selectProperty(property.id)}>
+    <div
+      class="pin"
+      style="top: {property.lat}px; left: {property.lng}px;"
+      on:click={() => selectProperty(property.id)}
+    >
       <img src={property.image} alt="空き家画像" />
       <p>{property.price}</p>
     </div>

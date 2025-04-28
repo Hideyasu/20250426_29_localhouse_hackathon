@@ -13,7 +13,7 @@ const config = {
 		}),
 		paths: {
 			base: process.env.GITHUB_ACTIONS ? '/20250426_29_localhouse_hackathon' : ''
-		}
+		},
 	}
 };
 
