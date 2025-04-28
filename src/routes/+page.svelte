@@ -1,38 +1,45 @@
-<h1>Welcome to SvelteKit</h1>
-<p>
-  Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the
-  documentation
-</p>
+<script lang="ts">
+  import Map from '../components/map.svelte'
+</script>
+<style>
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+</style>
 
-<span
-  class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
-  >Badge</span
->
-<span
-  class="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-red-600/10 ring-inset"
-  >Badge</span
->
-<span
-  class="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-yellow-600/20 ring-inset"
-  >Badge</span
->
-<span
-  class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset"
-  >Badge</span
->
-<span
-  class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-blue-700/10 ring-inset"
-  >Badge</span
->
-<span
-  class="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-indigo-700/10 ring-inset"
-  >Badge</span
->
-<span
-  class="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-purple-700/10 ring-inset"
-  >Badge</span
->
-<span
-  class="inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-xs font-medium text-pink-700 ring-1 ring-pink-700/10 ring-inset"
-  >Badge</span
->
+<div class="text-7xl font-bold text-shadow">
+  <!-- ロゴ部分はそのままでOK -->
+  <span class="text-blue-800">A</span>
+  <span class="text-black">K</span>
+  <span class="text-blue-800">I</span>
+  <span class="text-black">Y</span>
+  <span class="text-blue-800">A</span>
+  <span> </span>
+  <span class="text-black">S</span>
+  <span class="text-blue-800">I</span>
+  <span class="text-black">M</span>
+  <span class="text-black">U</span>
+  <span class="text-black">L</span>
+  <span class="text-blue-800">A</span>
+  <span class="text-black">T</span>
+  <span class="text-blue-800">I</span>
+  <span class="text-black">O</span>
+  <span class="text-black">N</span>
+</div>
+
+<div class="grid grid-cols-2 grid-rows-2 h-screen">
+  <div class="bg-red-500">
+    <div class="text-5xl font-bold">Search</div>
+  </div>
+  <div class="bg-blue-500">
+    <div class="text-5xl font-bold">Reform</div>
+    <div class="text-5xl font-bold">Before/After</div>
+  </div>
+  <div class="bg-green-500">
+    <div class="text-5xl font-bold">Map</div>
+    <Map />
+  </div>
+  <div class="bg-yellow-500">
+    <div class="text-5xl font-bold">Dashboard</div>
+  </div>
+</div>
