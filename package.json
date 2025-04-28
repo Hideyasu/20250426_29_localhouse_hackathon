@@ -29,5 +29,8 @@
 		"apexcharts": "^4.7.0",
 		"chart.js": "^4.4.9",
 		"date-fns": "^4.1.0"
+	},
+	"overrides": {
+		"rollup": "npm:@rollup/wasm-node"
 	}
 }
