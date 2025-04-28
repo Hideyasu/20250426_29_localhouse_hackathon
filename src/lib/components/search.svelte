@@ -1,6 +1,5 @@
 <script lang="ts">
     import { getHouses, type House } from "$lib/api/houses";
-    import { cities } from "$lib/consts/cities";
     import { onMount } from "svelte";
     import { parseISO, differenceInYears } from "date-fns";
 
@@ -39,7 +38,7 @@
         市区町村:
         <div class="selectbox-3">
             <select bind:value={selectedCities} multiple>
-                {#each cities as city}
+                {#each new Set(allHouses.map((house) => house.city)) as city}
                     <option>{city}</option>
                 {/each}
             </select>
