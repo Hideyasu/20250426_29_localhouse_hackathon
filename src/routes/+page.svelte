@@ -9,6 +9,7 @@
   let filteredHouses = $state<House[]>([]);
   let selectedHouse = $state<House | null>(null);
   let selectedEquipments = $state<Equipment[]>([]);
+  let livingYears = $state<number>(5);
   onMount(() => {
     window.addEventListener("hashchange", () => {
       selectedHouse =
@@ -21,11 +22,12 @@
   let data = $derived(
     selectedHouse
       ? [
-          { name: "購入費", data: [selectedHouse.price] },
+          { name: "購入費", data: [selectedHouse.price, 0] },
           ...selectedEquipments.map((item) => ({
             name: item.name,
-            data: [item.price],
+            data: [item.price, 0],
           })),
+          { name: "売却予想額", data: [0, livingYears]}
         ]
       : null,
   );
@@ -90,6 +92,8 @@
   <!-- Dashboard -->
   <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Dashboard</div>
+    <label>住む年数（年）<input type="range" min="1" max="50" bind:value={livingYears} /></label>
+    <p>{livingYears} 年</p>
     <Graph {data} />
   </div>
 </div>
