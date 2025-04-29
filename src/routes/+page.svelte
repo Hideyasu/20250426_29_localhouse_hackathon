@@ -1,12 +1,25 @@
 <script lang="ts">
   import Map from "../components/map.svelte";
   import Reform from "../components/reform.svelte";
-  //import Graph from "../components/graph.svelte";
-  //import Dashboard from "../components/dashboard.svelte";
   import Search from "$lib/components/search.svelte";
   import type { House } from "$lib/api/houses";
+  import Graph from "../components/graph.svelte";
+  import { onMount } from "svelte";
 
   let filteredHouses = $state<House[]>([]);
+  let selectedHouse = $state<House | null>(null);
+  onMount(() => {
+    window.addEventListener("hashchange", () => {
+      selectedHouse =
+        filteredHouses.find(
+          (house) => house.id === Number(location.hash.replace("#", "")),
+        ) ?? null;
+    });
+  });
+
+  let data = $derived(
+    selectedHouse ? [{ name: "購入費", data: [selectedHouse.price] }] : null,
+  );
 
   const categories = [
     {
@@ -55,13 +68,6 @@
   <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Reform</div>
     <Reform {categories} />
-    <div class="mt-6">
-      <button
-        class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
-      >
-        Before/Afterへ進む
-      </button>
-    </div>
   </div>
 
   <!-- Map -->
@@ -75,7 +81,6 @@
   <!-- Dashboard -->
   <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Dashboard</div>
-    <!--<Graph />-->
-    <!--<Dashboard />-->
+    <Graph {data} />
   </div>
 </div>

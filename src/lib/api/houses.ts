@@ -1,6 +1,7 @@
-const url = "https://script.google.com/macros/s/AKfycbzJ9B_kRKnVI6YTFbajc3zGU2zSo2s46ZkcNQU6zeAhte1-R78mSSTINfTdPtQcHtYBQw/exec?target=houses"
+const url = "https://script.google.com/macros/s/AKfycbx1a4sZvZZgHcg9qO1h2cw2nmHpsOmq3nAkZxWd0_FC5eDKB9HUUz6URSNX3pLkYKkq_g/exec?target=houses"
 
 export type House = {
+    id: number
     link: string
     price: number
     constructedAt: string
