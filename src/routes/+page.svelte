@@ -2,7 +2,7 @@
   import Map from "../components/map.svelte";
   import Reform from "../components/reform.svelte";
   import Search from "$lib/components/search.svelte";
-  import type { House } from "$lib/api/houses";
+  import type { House } from "$lib/api";
   import Graph from "../components/graph.svelte";
   import { onMount } from "svelte";
 

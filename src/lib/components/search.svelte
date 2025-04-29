@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getHouses, type House } from "$lib/api/houses";
+    import { getHouses, type House } from "$lib/api";
     import { onMount } from "svelte";
     import { parseISO, differenceInYears } from "date-fns";
 

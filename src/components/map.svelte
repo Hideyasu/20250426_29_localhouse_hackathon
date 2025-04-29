@@ -1,7 +1,7 @@
 <script lang="ts">
   const MAPS_API_KEY = "AIzaSyADPUVze39G8j0r7DaeqhW3fM-f146LcY4";
 
-  import type { House } from "$lib/api/houses";
+  import type { House } from "$lib/api";
   import { onMount } from "svelte";
 
   const { houses } = $props<{ houses: House[] }>();
