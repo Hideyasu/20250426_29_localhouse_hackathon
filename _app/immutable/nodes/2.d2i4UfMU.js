@@ -4,7 +4,7 @@ import{t as Y,a as T}from"../chunks/DzXVVYsB.js";import{a6 as V,a4 as se,p as q,
               <img src="https://placehold.jp/50x50.png" style="width: 100%; height: auto; margin-bottom: 8px;" />
               <p><strong>価格:</strong> ${p.price}万円</p>
               <p><strong>築年数:</strong> ${p.constructedAt}</p>
-              <a href="/#${p.id}" style="background-color: #1e3a8a; color: white; border: none; padding: 8px 12px; border-radius: 5px; margin-top: 10px; cursor: pointer;">
+              <a href="#${p.id}" style="background-color: #1e3a8a; color: white; border: none; padding: 8px 12px; border-radius: 5px; margin-top: 10px; cursor: pointer;">
                 この空き家を選択する
               </a>
             </div>
