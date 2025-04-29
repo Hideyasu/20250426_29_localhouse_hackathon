@@ -2,12 +2,13 @@
   import Map from "../components/map.svelte";
   import Reform from "../components/reform.svelte";
   import Search from "$lib/components/search.svelte";
-  import type { House } from "$lib/api";
+  import type { Equipment, House } from "$lib/api";
   import Graph from "../components/graph.svelte";
   import { onMount } from "svelte";
 
   let filteredHouses = $state<House[]>([]);
   let selectedHouse = $state<House | null>(null);
+  let selectedEquipments = $state<Equipment[]>([]);
   onMount(() => {
     window.addEventListener("hashchange", () => {
       selectedHouse =
@@ -18,7 +19,15 @@
   });
 
   let data = $derived(
-    selectedHouse ? [{ name: "購入費", data: [selectedHouse.price] }] : null,
+    selectedHouse
+      ? [
+          { name: "購入費", data: [selectedHouse.price] },
+          ...selectedEquipments.map((item) => ({
+            name: item.name,
+            data: [item.price],
+          })),
+        ]
+      : null,
   );
 
   const categories = [
@@ -67,7 +76,7 @@
   <!-- Reform -->
   <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
     <div class="text-3xl font-bold text-blue-900 mb-4">Reform</div>
-    <Reform {categories} />
+    <Reform bind:selectedEquipments />
   </div>
 
   <!-- Map -->
