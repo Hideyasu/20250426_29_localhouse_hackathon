@@ -44,15 +44,21 @@
             </select>
         </div>
     </label>
-    <label style="display: block; margin-bottom: 10px;">
+
+    <label style="display: block; margin-bottom: 10px; margin-top: 20px;">
         価格:
         <input type="number" bind:value={maxPrice} class="textbox-1" />
     </label>
-    <label>
+
+    <label style="display: block; margin-bottom: 10px;">
         最大築年数:
         <input type="number" bind:value={maxAge} class="textbox-1" />
     </label>
-    <button type="submit">検索</button>
+
+    <!-- 築年数とボタンの間に余白を追加 -->
+    <div style="margin-top: 20px;">
+        <button type="submit">検索</button>
+    </div>
 </form>
 
 <style>
@@ -66,7 +72,7 @@
     .selectbox-3 select {
         appearance: none;
         width: 100%;
-        height: 2.8em;
+        height: 200px; /* 高さを大きくしてスクロールできるように */
         padding: 0.4em 1em;
         border: 1px solid #ccc;
         border-radius: 8px;
@@ -75,6 +81,7 @@
         font-size: 1em;
         cursor: pointer;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        overflow-y: auto; /* 縦スクロールできるように */
     }
 
     .textbox-1 {
