@@ -26,7 +26,7 @@
     if (chart && data) {
       chart.updateOptions({
         series: data,
-        xaxis: { categories: ["費用"] },
+        xaxis: { categories: ["費用", "収入"] },
       });
     }
   });
